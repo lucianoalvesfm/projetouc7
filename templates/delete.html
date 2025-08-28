@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+<!-- Herda a estrutura principal do base.html (layout comum) -->
+
+{% block title %}Confirmar Exclusão • CRUD Flask{% endblock %}
+<!-- Define o título da aba/navegador para esta página -->
+
+{% block content %}
+<!-- Início da área de conteúdo principal -->
+
+<h1 class="page-title">Excluir Técnico</h1>
+<!-- Título visível na página -->
+
+<div class="card">
+  <!-- Card que contém a mensagem e o formulário -->
+
+  <p>
+    <!-- Mensagem de confirmação da exclusão -->
+    Tem certeza que deseja excluir o Técnico
+    <strong>{{ produto['nome'] }}</strong>?
+    <!-- {{ produto['nome'] }} insere dinamicamente o nome do Técnico que será excluído -->
+  </p>
+
+  <!-- Formulário de confirmação -->
+  <form method="post">
+    <!-- Ao enviar, faz um POST para a mesma rota (/delete/<id>) -->
+    <button class="btn btn--danger" type="submit">Sim, excluir</button>
+    <!-- Botão que confirma a exclusão -->
+
+    <a class="btn" href="{{ url_for('home') }}">Cancelar</a>
+    <!-- Link que cancela a ação e volta para a página inicial -->
+  </form>
+</div>
+
+{% endblock %}
+<!-- Fim da área de conteúdo -->

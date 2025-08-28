@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <!-- Define o tipo do documento e idioma como português do Brasil -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Define a codificação de caracteres (UTF-8, padrão universal) -->
+
+    <!-- Bloco de título que pode ser substituído em templates filhos -->
+    <title>Home</title>
+
+    <!-- Define que a página será responsiva (escala em dispositivos móveis) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Otimização de carregamento das fontes externas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Importação da fonte "Inter" do Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Importação do CSS local, que está dentro da pasta /static/css/ -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body class="home-page">
+    <!-- Cabeçalho fixo no topo -->
+    <header class="topbar">
+      <div class="container topbar__inner">
+       
+
+      </div>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main class="container">
+        <div class="centralizado">
+    <h1>Bem-vindo ao Sistema de Técnicos</h1>
+    <p>A partir daqui, você pode navegar pelas funcionalidades.</p>
+      <ul>
+        <li class="btn btn--primary"><a href="{{ url_for('home') }}">Técnicos</a></li> <br>
+        <li class="btn btn--primary"><a href="#">Hospitais</a></li> <br>
+        <li class="btn btn--primary"><a href="#">Estoque</a></li> <br>
+        <li class="btn btn--primary"><a href="#">Caixa</a></li> <br>
+        <li class="btn btn--primary"><a href="#">Relatórios</a></li> <br>
+        <li class="btn btn--primary"><a href="#">Outros</a></li> <br>
+      </ul>
+  </div>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer class="footer">
+      <div class="container">
+        <small>
+           L-Soluções - Luciano Alves Ferreira - UC7
+        </small>
+      </div>
+    </footer>
+  </body>
+</html>
+

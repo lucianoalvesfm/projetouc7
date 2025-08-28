@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+<!-- Herda a estrutura principal do base.html -->
+
+{% block title %}Produtos • CRUD Flask{% endblock %}
+<!-- Define o título da aba do navegador -->
+
+{% block content %}
+<!-- Início da área de conteúdo -->
+
+<h1 class="page-title">Técnicos</h1>
+<!-- Título visível da página -->
+
+<div class="card">
+  <!-- Card que envolve a tabela -->
+  <div class="table-responsive">
+    <a href="{{ url_for('pagina') }}" class="btn btn--primary" style="margin-bottom: 15px; display: inline-block;">
+  ← Voltar para a Página Inicial
+</a>
+    <!-- Responsividade para telas menores -->
+    <table class="table">
+      <!-- Início da tabela de Técnicos -->
+      <thead>
+        <tr>
+          <th>#</th>
+          <!-- Coluna do ID -->
+          <th>Nome</th>
+          <!-- Coluna do nome do Técnico -->
+          <th class="text-right">Coren</th>
+          <!-- Coluna do Coren -->
+          <th class="text-center">Ações</th>
+          <!-- Nova coluna para botões de ação (Editar, depois Delete) -->
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in produtos %}
+        <!-- Loop que percorre a lista de produtos -->
+        <tr>
+          <td>{{ p["id"] }}</td>
+          <!-- Mostra o ID do Técnico -->
+          <td>{{ p["nome"] }}</td>
+          <!-- Mostra o nome do Técnico -->
+          <td class="text-right">{{ p['preco']|int }}</td>
+          <!-- Formata o Coren com 2 casas decimais -->
+
+          <td class="text-center">
+            <!-- Botão de editar -->
+            <a href="/edit/{{ p['id'] }}" class="btn btn-sm btn-primary"
+              >Editar</a
+            >
+            <!-- Botão de excluir -->
+            <a
+              class="btn btn--small btn--danger"
+              href="{{ url_for('delete_product', id=p['id']) }}"
+              >Excluir</a
+            >
+          </td>
+        </tr>
+        {% else %}
+        <!-- Caso não haja Técnicos cadastrados -->
+        <tr>
+          <td colspan="4" class="muted">Nenhum Técnico cadastrado ainda.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <!-- Fim da tabela -->
+  </div>
+</div>
+
+{% endblock %}
+<!-- Fim do conteúdo -->

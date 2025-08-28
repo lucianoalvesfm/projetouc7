@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+<!-- Herda a estrutura principal do base.html (cabeçalho, CSS, etc.) -->
+
+{% block title %}Editar Produto • CRUD Flask{% endblock %}
+<!-- Define o título da aba do navegador -->
+
+{% block content %}
+<!-- Início da seção de conteúdo -->
+
+<h1 class="page-title">Editar Técnico</h1>
+<!-- Título da página -->
+
+<div class="card">
+  <!-- Card estilizado que envolve o formulário -->
+
+  <!-- Formulário de edição -->
+  <!-- OBS: sem atributo "action", o POST vai automaticamente para a mesma rota (/edit/<id>) -->
+  <form method="post" class="form">
+    <!-- Campo de nome do Técnico -->
+    <div class="form__row">
+      <label class="form__label">
+        Nome
+        <!-- Campo de texto já preenchido com o Nome atual do Técnico -->
+        <input
+          class="form__input"
+          type="text"
+          name="nome"
+          value="{{ produto['nome'] }}"
+          placeholder="Nome completo"
+          required
+        />
+      </label>
+    </div>
+
+    <!-- Campo Coren do Técnico -->
+    <div class="form__row">
+      <label class="form__label">
+        Coren
+        <!-- Campo de texto já preenchido com o Coren atual -->
+        <input
+          class="form__input"
+          type="text"
+          name="preco"
+          value="{{ produto['preco'] }}"
+          inputmode="decimal"
+          required
+        />
+      </label>
+    </div>
+
+    <!-- Botões de ação -->
+    <div class="form__actions">
+      <!-- Botão que envia os dados para salvar no banco -->
+      <button class="btn btn--primary" type="submit">Salvar Alterações</button>
+
+      <!-- Botão de cancelar (volta para a lista de Técnicos) -->
+      <a class="btn" href="{{ url_for('home') }}">Cancelar</a>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
+<!-- Fim da seção de conteúdo -->

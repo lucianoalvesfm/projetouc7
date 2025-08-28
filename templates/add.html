@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+<!-- Herda a estrutura do base.html -->
+
+{% block title %}Adicionar Técnico • CRUD Flask{% endblock %}
+<!-- Define o título da aba do navegador -->
+
+{% block content %}
+<!-- Início da seção de conteúdo principal -->
+
+<h1 class="page-title">Cadastrar novo Técnico</h1>
+<!-- Título visível na página -->
+
+<div class="card">
+  <!-- Card para organizar o formulário -->
+  <!-- Formulário para adicionar Técnico -->
+  <form method="post" action="{{ url_for('add') }}" class="form">
+    <!-- Campo de nome do Técnico -->
+    <div class="form__row">
+      <label class="form__label">
+        Nome
+        <input
+          class="form__input"
+          type="text"
+          name="nome"
+          placeholder="Nome completo"
+          required
+        />
+      </label>
+    </div>
+
+    <!-- Campo Coren do Técnico -->
+    <div class="form__row">
+      <label class="form__label">
+        Coren
+        <input
+          class="form__input"
+          type="number"
+          name="preco"
+          placeholder="Digite aqui o COREN a ser cadastrado"
+          required
+        />
+      </label>
+    </div>
+
+    <!-- Botões de ação -->
+    <div class="form__actions">
+      <button class="btn btn--primary" type="submit">Salvar</button>
+      <!-- Envia os dados -->
+      <a class="btn" href="{{ url_for('home') }}">Voltar</a>
+      <!-- Volta para a página inicial -->
+    </div>
+  </form>
+</div>
+
+{% endblock %}
+<!-- Fim do conteúdo -->
