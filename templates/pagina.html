@@ -38,19 +38,19 @@
 
     <!-- Conteúdo principal da página -->
     <main class="container">
-        <div class="centralizado">
+  <div class="centralizado">
     <h1>Bem-vindo ao Sistema de Técnicos</h1>
     <p>A partir daqui, você pode navegar pelas funcionalidades.</p>
-      <ul>
-        <li class="btn btn--primary"><a href="{{ url_for('home') }}">Técnicos</a></li> <br>
-        <li class="btn btn--primary"><a href="#">Hospitais</a></li> <br>
-        <li class="btn btn--primary"><a href="#">Estoque</a></li> <br>
-        <li class="btn btn--primary"><a href="#">Caixa</a></li> <br>
-        <li class="btn btn--primary"><a href="#">Relatórios</a></li> <br>
-        <li class="btn btn--primary"><a href="#">Outros</a></li> <br>
-      </ul>
+    <ul class="menu-links">
+      <li><a class="btn-link" href="{{ url_for('home') }}">Técnicos</a></li>
+      <li><a class="btn-link" href="#">Hospitais</a></li>
+      <li><a class="btn-link" href="#">Estoque</a></li>
+      <li><a class="btn-link" href="#">Caixa</a></li>
+      <li><a class="btn-link" href="#">Relatórios</a></li>
+      <li><a class="btn-link" href="#">Outros</a></li>
+    </ul>
   </div>
-    </main>
+</main>
 
     <!-- Rodapé da página -->
     <footer class="footer">
@@ -62,4 +62,5 @@
     </footer>
   </body>
 </html>
+
 
