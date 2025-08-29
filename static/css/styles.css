@@ -45,6 +45,7 @@ body {
   align-items: center;
   justify-content: space-between;
   min-height: 64px;
+  padding: 1rem 0;
 }
 
 .brand {
@@ -155,7 +156,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* Botões */
+/* Botões comuns */
 .btn {
   appearance: none;
   border: 1px solid var(--border);
@@ -289,37 +290,81 @@ body {
   margin-bottom: 2rem;
 }
 
-/* MENU DE LINKS */
+/* MENU DE LINKS - agora com grid 3x2 e botões uniformes */
+
 .menu-links {
-  display: flex;
-  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  max-width: 640px; /* controla largura máxima para centralizar */
+  width: 100%;
 }
 
-.btn-link {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  background-color: #3498db;
-  color: #fff;
+.menu-links li {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-btn {
+  appearance: none;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 600;
+  background: linear-gradient(180deg, #f87171, #ef4444);
+  color: #000000;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease, transform 0.15s ease;
+  min-width: 140px; /* largura mínima para caber o texto */
+  justify-content: center;
 }
 
-.btn-link:hover {
-  background-color: #2980b9;
+.menu-btn:hover,
+.menu-btn:focus {
+  background: linear-gradient(180deg, #fca5a5, #f87171);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.35);
+  transform: translateY(-2px);
+  outline: none;
+  color: #000000;
 }
 
-/* RODAPÉ */
-.footer {
-  background-color: #ecf0f1;
-  padding: 15px 0;
-  text-align: center;
-  font-size: 14px;
-  color: #7f8c8d;
-  border-top: 1px solid #ccc;
+/* Ícones lado a lado com o texto */
+.menu-btn > svg,
+.menu-btn > img {
+  height: 1.2em;
+  width: 1.2em;
 }
 
+/* Responsivo para telas pequenas */
+@media (max-width: 480px) {
+  .menu-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .menu-btn {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+.logo {
+  color: #d53542; /* vermelho claro */
+  font-weight: 700; /* opcional: deixar mais forte */
+  font-size: 24px;  /* opcional: aumentar o tamanho */
+}
+
+.botão {
+  margin: 10px;
+  margin-bottom: 20px;
+}

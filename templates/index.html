@@ -13,12 +13,13 @@
 <div class="card">
   <!-- Card que envolve a tabela -->
   <div class="table-responsive">
-    <a href="{{ url_for('pagina') }}" class="btn btn--primary" style="margin-bottom: 15px; display: inline-block;">
-  ← Voltar para a Página Inicial
-</a>
+    
     <!-- Responsividade para telas menores -->
     <table class="table">
       <!-- Início da tabela de Técnicos -->
+      <div class="botão">
+        <a class="btn btn--primary" href="{{ url_for('add') }}">+ Adicionar</a>
+      </div>
       <thead>
         <tr>
           <th>#</th>
